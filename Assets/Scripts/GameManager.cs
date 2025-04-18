@@ -1,29 +1,85 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
-    GameObject player;
-    [SerializeField] GameObject[] backgrounds;
-    int backgroundIndex = 0;
+    public static GameManager Instance { get; private set; }
 
-    float nextTriggerX = 25f;
+    [Header("UI")]
+    public GameObject startUI; // ì‹œì‘ UI
+    public GameObject gameOverUI; // ê²Œì„ ì˜¤ë²„ UI
+    public TextMeshProUGUI scoreText; // ì ìˆ˜ í…ìŠ¤íŠ¸
+    [Header("ì ìˆ˜")]
+    int score = 0; // ì ìˆ˜
 
-    // Start is called before the first frame update
+    [Header("í”Œë ˆì´ì–´")]
+    public PlayerController player;
+
+    private static bool isRestarting = false;
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // ì¤‘ë³µëœ ì¸ìŠ¤í„´ìŠ¤ëŠ” íŒŒê´´
+            return;
+        }
+        // ê²Œì„ ì¼ì‹œ ì •ì§€
+        Time.timeScale = 0f;
+        player = FindObjectOfType<PlayerController>();
+    }
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (player.transform.position.x >= nextTriggerX) // ´ÙÀ½ ±âÁØ À§Ä¡¿¡ µµ´ŞÇÏ¸é
+        if (isRestarting)
         {
-            backgrounds[backgroundIndex].transform.position += new Vector3(26 * 2, 0, 0); // ¹è°æÀ» ¿À¸¥ÂÊÀ¸·Î 2Ä­ ÀÌµ¿ 
-            backgroundIndex = (backgroundIndex + 1) % 2; // ÀÎµ¦½º ¹ø°¥¾Æ °¡±â
-            nextTriggerX += 26f; // ´ÙÀ½ ±âÁØÁ¡µµ ¾ÕÀ¸·Î ÀÌµ¿
+            player.run = true; // í”Œë ˆì´ì–´ê°€ ë‹¬ë¦¬ê¸° ì‹œì‘
+            // ë¦¬ìŠ¤íƒ€íŠ¸ ìƒíƒœì—ì„œëŠ” startUIë¥¼ ë¹„í™œì„±í™”
+            startUI?.SetActive(false);
+            gameOverUI?.SetActive(false);
+            Time.timeScale = 1f;
+            isRestarting = false;
         }
+        else
+        {
+            player.run = true; // í”Œë ˆì´ì–´ê°€ ë‹¬ë¦¬ê¸° ì‹œì‘
+            // ì¼ë°˜ì ì¸ ì²« ì‹œì‘
+            startUI?.SetActive(true);
+            gameOverUI?.SetActive(false);
+            Time.timeScale = 0f;
+        }
+
+        score = 0;
+        if (scoreText != null)
+            scoreText.text = "Score: 0";
     }
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+        startUI?.SetActive(false);
+        gameOverUI?.SetActive(false);
+    }
+    public void RestartGame()
+    {
+        isRestarting = true; // ë¦¬ìŠ¤íƒ€íŠ¸ ìƒíƒœ ì €ì¥
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+        gameOverUI.SetActive(true);
+    }
+    public void AddScore(int amount)
+    {
+        score += amount;
+        if (scoreText != null)
+            scoreText.text = "Score: " + score.ToString();
+    }
+    
 }
