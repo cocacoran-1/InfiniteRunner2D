@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
 
     [Header("플레이어")]
     public PlayerController player;
-
+    SpawnManager spawnManager; // 스폰 매니저
+    
     private static bool isRestarting = false;
     void Awake()
     {
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-
+        
         if (isRestarting)
         {
             player.run = true; // 플레이어가 달리기 시작
@@ -81,5 +82,4 @@ public class GameManager : MonoBehaviour
         if (scoreText != null)
             scoreText.text = "Score: " + score.ToString();
     }
-    
 }

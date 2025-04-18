@@ -1,25 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\InfiniteRunner\\InfiniteRunner\\",
+  "WorkspaceRootPath": "C:\\InfiniteRunner\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|c:\\infiniterunner\\infiniterunner\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|c:\\infiniterunner\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|c:\\infiniterunner\\infiniterunner\\assets\\scripts\\scorezonemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|C:\\InfiniteRunner\\assets\\scripts\\scorezonemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scorezonemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|C:\\InfiniteRunner\\InfiniteRunner\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|C:\\InfiniteRunner\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|C:\\InfiniteRunner\\InfiniteRunner\\assets\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|C:\\InfiniteRunner\\assets\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|C:\\InfiniteRunner\\InfiniteRunner\\assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|C:\\InfiniteRunner\\assets\\scripts\\camercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|C:\\InfiniteRunner\\assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9521920E-A3D1-01C8-0D29-8FF8E759F64F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,17 +34,29 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CamerController.cs",
+              "DocumentMoniker": "C:\\InfiniteRunner\\Assets\\Scripts\\CamerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CamerController.cs",
+              "ToolTip": "C:\\InfiniteRunner\\Assets\\Scripts\\CamerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CamerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T10:20:30.359Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ScoreZoneManager.cs",
-              "DocumentMoniker": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\ScoreZoneManager.cs",
+              "DocumentMoniker": "C:\\InfiniteRunner\\Assets\\Scripts\\ScoreZoneManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreZoneManager.cs",
-              "ToolTip": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\ScoreZoneManager.cs",
+              "ToolTip": "C:\\InfiniteRunner\\Assets\\Scripts\\ScoreZoneManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\ScoreZoneManager.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwB0AAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T09:32:06.249Z",
               "EditorCaption": ""
@@ -49,23 +65,24 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\GameManager.cs",
+              "DocumentMoniker": "C:\\InfiniteRunner\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
-              "ToolTip": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\InfiniteRunner\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowBYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAADgv0oAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T08:53:00.364Z"
+              "WhenOpened": "2025-04-18T08:53:00.364Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Obstacle.cs",
-              "DocumentMoniker": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\Obstacle.cs",
+              "DocumentMoniker": "C:\\InfiniteRunner\\Assets\\Scripts\\Obstacle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Obstacle.cs",
-              "ToolTip": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\Obstacle.cs",
+              "ToolTip": "C:\\InfiniteRunner\\Assets\\Scripts\\Obstacle.cs",
               "RelativeToolTip": "Assets\\Scripts\\Obstacle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T07:55:56.591Z"
             },
@@ -73,23 +90,24 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "SpawnManager.cs",
-              "DocumentMoniker": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\SpawnManager.cs",
+              "DocumentMoniker": "C:\\InfiniteRunner\\Assets\\Scripts\\SpawnManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpawnManager.cs",
-              "ToolTip": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\SpawnManager.cs",
+              "ToolTip": "C:\\InfiniteRunner\\Assets\\Scripts\\SpawnManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\SpawnManager.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowCkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwDoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T07:45:26.908Z"
+              "WhenOpened": "2025-04-18T07:45:26.908Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "PlayerController.cs",
-              "DocumentMoniker": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\PlayerController.cs",
+              "DocumentMoniker": "C:\\InfiniteRunner\\Assets\\Scripts\\PlayerController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
-              "ToolTip": "C:\\InfiniteRunner\\InfiniteRunner\\Assets\\Scripts\\PlayerController.cs",
+              "ToolTip": "C:\\InfiniteRunner\\Assets\\Scripts\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAwA8AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCIAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-18T07:11:01.411Z",
               "EditorCaption": ""

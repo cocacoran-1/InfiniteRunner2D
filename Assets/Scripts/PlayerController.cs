@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 5f;
+    [HideInInspector]
+    public float moveSpeed = 10f;
+
+    [SerializeField] float baseSpeed = 10f;
+    [SerializeField] float speedGainPerTick = 0.1f;
+    [SerializeField] float maxSpeed = 15f;
 
     [SerializeField] float jumpForce = 5f;
     [SerializeField] bool isGrounded;
@@ -15,7 +20,6 @@ public class PlayerController : MonoBehaviour
     Animator playerAnimator;
 
     public bool run = false;
-   
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
@@ -93,5 +97,8 @@ public class PlayerController : MonoBehaviour
             collision.gameObject.SetActive(false);
         }
     }
-
+    public void ApplyDifficulty(float difficultyTick)
+    {
+        moveSpeed = Mathf.Min(baseSpeed + difficultyTick * speedGainPerTick, maxSpeed);
+    }
 }

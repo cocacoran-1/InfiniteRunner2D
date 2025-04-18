@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ScoreZoneManager : MonoBehaviour
 {
+    public static ScoreZoneManager Instance { get; private set; }
+
     [Header("프리팹 및 풀 설정")]
     public GameObject fruitPrefab; // 점수용 과일 프리팹
     public int poolSize = 10;
 
     [Header("스폰 타이밍 및 위치")]
-    public float spawnInterval = 2.5f;
-    public float initialDelay = 1f;
+
     public float arcHeight = 3f; // 아치형 곡선의 높이
     public float arcWidth = 5f; // 아치형 곡선의 너비
     public int pointsPerArc = 5; // 아치 하나당 과일 개수
@@ -21,12 +22,24 @@ public class ScoreZoneManager : MonoBehaviour
     [Header("아치 시작 위치 오프셋")]
     public Vector2 arcStartOffset = new Vector2(0f, 0f);
 
-    // Start is called before the first frame update
+    [Header("난이도 조절 설정")]
+    public float initialDelay = 1f;
+    public float initialInterval = 2.5f;
+    public float spawnAcceleration = 0.2f;
+    public float minInterval = 0.8f;
+
+    private float currentInterval;
+    void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         InitPool();
-        InvokeRepeating(nameof(SpawnFruitArc), initialDelay, spawnInterval);
+        currentInterval = initialInterval;
+        StartCoroutine(SpawnRoutine());
     }
+
     void InitPool()
     {
         for (int i = 0; i < poolSize; i++)
@@ -50,6 +63,22 @@ public class ScoreZoneManager : MonoBehaviour
         fruitPool.Add(newFruit);
         return newFruit;
     }
+    IEnumerator SpawnRoutine()
+    {
+
+        int spawnCount = 0;
+        while (true)
+        {
+            SpawnFruitArc();
+            yield return new WaitForSeconds(currentInterval);
+            spawnCount++;
+            if (spawnCount % 5 == 0 && currentInterval > minInterval)
+            {
+                currentInterval -= spawnAcceleration;
+                Debug.Log("Current Interval: " + currentInterval);
+            }
+        }
+    }
     void SpawnFruitArc()
     {
         for (int i = 0; i < pointsPerArc; i++)
@@ -71,4 +100,17 @@ public class ScoreZoneManager : MonoBehaviour
 
         currentSpawnX += 26f; // 다음 장애물 위치 기준으로 이동
     }
+    public void ApplyDifficulty(float difficultyTick)
+    {
+        float adjustedInterval = initialInterval - (difficultyTick * 0.05f);
+        currentInterval = Mathf.Max(adjustedInterval, minInterval);
+        // 플레이어 속도도 함께 증가 적용
+        PlayerController player = FindObjectOfType<PlayerController>();
+        if (player != null)
+        {
+            player.ApplyDifficulty(difficultyTick);
+            Debug.Log($"[속도 적용됨] ");
+        }
+    }
+
 }

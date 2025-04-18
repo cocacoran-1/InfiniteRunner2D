@@ -4860,12 +4860,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fruitPrefab: {fileID: 3765492175791007516, guid: d1bd805e51f41c448a06162fe556d5e9, type: 3}
   poolSize: 10
-  spawnInterval: 2.5
-  initialDelay: 1
   arcHeight: 2
   arcWidth: 5
   pointsPerArc: 5
   arcStartOffset: {x: -2.5, y: -1.5}
+  initialDelay: 1
+  initialInterval: 2.5
+  spawnAcceleration: 2.4
+  minInterval: 0.1
 --- !u!4 &539437360
 Transform:
   m_ObjectHideFlags: 0
@@ -4928,7 +4930,7 @@ MonoBehaviour:
   startUI: {fileID: 1972201107}
   gameOverUI: {fileID: 1510316850}
   scoreText: {fileID: 106417303}
-  player: {fileID: 1389065257}
+  player: {fileID: 1389065258}
 --- !u!1 &650408442
 GameObject:
   m_ObjectHideFlags: 0
@@ -8572,11 +8574,17 @@ Transform:
   - {fileID: 1107370779}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1389065257 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8024391788249788474, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
+--- !u!114 &1389065258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5881064428458196150, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
   m_PrefabInstance: {fileID: 1731946305879167766}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b694330cbe7df684490392657c752ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1390598692
 GameObject:
   m_ObjectHideFlags: 0
@@ -8799,8 +8807,10 @@ MonoBehaviour:
   - -2.5
   - -3
   - -2
-  spawnInterval: 2.5
   initialDelay: 1
+  initialInterval: 2.5
+  spawnAcceleration: 2.4
+  minInterval: 0.1
 --- !u!4 &1506478043
 Transform:
   m_ObjectHideFlags: 0
@@ -9127,6 +9137,52 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2125245783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2125245785}
+  - component: {fileID: 2125245784}
+  m_Layer: 0
+  m_Name: DifficultyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2125245784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125245783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3627f0607ca34479a48771926e9297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tickInterval: 1
+  difficultyTick: 0
+--- !u!4 &2125245785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125245783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 475.85947, y: 5.4229956, z: -0.13312826}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2142483918
 GameObject:
   m_ObjectHideFlags: 0
@@ -10186,12 +10242,32 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5881064428458196150, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
+      propertyPath: run
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881064428458196150, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
+      propertyPath: maxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881064428458196150, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
+      propertyPath: baseSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881064428458196150, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
       propertyPath: jumpForce
-      value: 115
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881064428458196150, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
+      propertyPath: isGrounded
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5881064428458196150, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
       propertyPath: fallMultiplier
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5881064428458196150, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
+      propertyPath: speedGainPerTick
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8024391788249788474, guid: ccfd628f7a4a0f84794f9fbc80f6e0a7, type: 3}
       propertyPath: m_Name
@@ -10215,3 +10291,4 @@ SceneRoots:
   - {fileID: 539437360}
   - {fileID: 2110753156}
   - {fileID: 309466935}
+  - {fileID: 2125245785}
